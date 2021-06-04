@@ -1,4 +1,18 @@
+@font-face {
+    font-family: "Lato";
+    src: url('../assets/fonts/Lato-Thin.woff2') format("woff2"),
+         url('../assets/fonts/Lato-Light.woff2') format("woff2"),
+         url('../assets/fonts/Lato-Bold.woff2') format("woff2");
+    font-weight: 100, 300, 700;
+    font-style: lighter, normal, bold;
+}
+:root {
+    --primary-yellow: #ffd602;
+    --primary-red: #d5040a;
+    --primary-blue: #035cb6;    
+}
 body {
+    font-family: 'Lato', sans-serif;
     height: 100vh;
     margin: 0;
     overflow: hidden;
@@ -6,10 +20,18 @@ body {
 .page {
     height: 100vh;
     position: relative;
+    width: 100%;
 }
 .container {
     position: absolute;
     z-index:1;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 20% 50% 30%;
+    grid-template-areas: "nav     aside"
+                         "section aside"
+                         "section aside"
+                         "footer  aside";
 }
 .loader {
     background: pink;
