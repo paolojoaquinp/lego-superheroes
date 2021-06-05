@@ -274,3 +274,6 @@ body {
     width: 50%;
     height: 50%;
 }
+.modal__content--close:hover {
+    cursor: pointer;
+}

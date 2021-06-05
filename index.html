@@ -34,10 +34,10 @@
             </section>
 
             <section class="footer">
-                <div>
+                <div id="button-batman">
                     <img src="https://i.ibb.co/M18p91c/batman.webp" alt="batman">
                 </div>
-                <div>
+                <div id="button-robin">
                     <img src="https://i.ibb.co/Xzsdvgg/robin.png" alt="robin">
                 </div>
                 <div id="button-spidey">
@@ -62,7 +62,17 @@
 <script>
     const modal = document.querySelector('.modal');
     const buttonSpidey = document.querySelector('#button-spidey');
+    const buttonBatman = document.querySelector('#button-batman');
+    const buttonRobin = document.querySelector('#button-robin');
     const closeButton = document.querySelector('.modal__content--close');
+    buttonBatman.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('visible');
+    });
+    buttonRobin.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('visible');
+    });
     buttonSpidey.addEventListener('click', () => {
         // 1ra Forma
         // modal.className = 'modal visible';
