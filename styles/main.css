@@ -255,11 +255,11 @@ body {
         visibility: hidden;
     }
 }
-.hidden {
-    display:none;
-}
 .visible {
     display: grid;
+}
+.hidden {
+    display: none;
 }
 .modal {
     width: 100%;
@@ -267,4 +267,10 @@ body {
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
     z-index: 4;
+    place-items: center;
+}
+.modal__content {
+    background: white;
+    width: 50%;
+    height: 50%;
 }
