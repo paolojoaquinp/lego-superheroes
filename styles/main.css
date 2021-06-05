@@ -255,3 +255,16 @@ body {
         visibility: hidden;
     }
 }
+.hidden {
+    display:none;
+}
+.visible {
+    display: grid;
+}
+.modal {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 4;
+}
