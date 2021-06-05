@@ -90,7 +90,7 @@ body {
     font-family: sans-serif;
 }
 .main-content p:last-child {
-    font-weight: 100;
+    font-weight: 700;
     margin: 0;
     width: 60%;
 }
@@ -271,9 +271,75 @@ body {
 }
 .modal__content {
     background: white;
-    width: 50%;
+    width: 35%;
     height: 50%;
+    display: grid;
+    place-items: center;
+}
+.modal__content--close {
+    place-self: end;
+    align-self: start;
 }
 .modal__content--close:hover {
     cursor: pointer;
+}
+.modal__content--slider {
+    width: 300px;
+    height: 200px;
+    transform-style: preserve-3d;
+}
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.card {
+    background: var(--primary-yellow);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 50%;
+    height: 100%;
+}
+.card img {
+    width: 100%;
+}
+#radio-1:checked ~ .cards #card-1,
+#radio-2:checked ~ .cards #card-2,
+#radio-3:checked ~ .cards #card-3 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+#radio-1:checked ~ .cards #card-2,
+#radio-2:checked ~ .cards #card-3,
+#radio-3:checked ~ .cards #card-1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+#radio-1:checked ~ .cards #card-3,
+#radio-2:checked ~ .cards #card-1,
+#radio-3:checked ~ .cards #card-2 {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+input[type="radio"] {
+    visibility: hidden;
+}
+.button-red {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border: 3px solid var(--primary-blue);
+    background: var(--primary-red);
+    font-size: 1rem;
+    color: white;
+    border-radius: 20px;
+    margin: 20px 0 0 0;
 }
