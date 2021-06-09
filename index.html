@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/tablet.css" media="(max-width: 900px)"/>
+    <link rel="stylesheet" href="./styles/phone.css" media="(max-width: 580px)"/>
     <title>Lego SuperHeroes</title>
 </head>
 <body>
@@ -14,12 +16,15 @@
             <nav class="navbar">
                 <div class="navbar__content">
                     <img src="https://i.ibb.co/MMmDPXN/lego.png" alt="lego logo">
-                    <ul>
-                        <li><a href="#">EXCLUSIVOS</a></li>
-                        <li><a href="#">NUEVOS</a></li>
-                        <li><a href="#">GIFT CARDS</a></li>
-                        <li><a href="#">FIND A STORE</a></li>
-                    </ul>
+                    <div class="navbar__menu">
+                        <ul>
+                            <li><a href="#">EXCLUSIVOS</a></li>
+                            <li><a href="#">NUEVOS</a></li>
+                            <li><a href="#">GIFT CARDS</a></li>
+                            <li><a href="#">FIND A STORE</a></li>
+                        </ul>
+                        <a class="toggle__menu">Menu</a>
+                    </div>
                 </div>
             </nav>
             <section class="main-content">
@@ -102,6 +107,17 @@
     buttonRobin.addEventListener('click', () => {
         modal.classList.remove('hidden');
         modal.classList.add('visible');
+        cards.innerHTML = `
+        <label for="radio-1" id="card-1" class="card">
+            <img src="./assets/images/spidey-1.png" alt="spiderman 1"/>
+        </label>
+        <label for="radio-2" id="card-2" class="card">
+            <img src="./assets/images/spidey-2.png" alt="spiderman 2"/>
+        </label>
+        <label for="radio-3" id="card-3" class="card">
+            <img src="./assets/images/spidey-3.png" alt="spiderman 3"/>
+        </label>
+        `;
     });
     buttonSpidey.addEventListener('click', () => {
         modal.classList.remove('hidden');

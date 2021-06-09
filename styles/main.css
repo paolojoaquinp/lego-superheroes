@@ -15,10 +15,10 @@ body {
     font-weight: 300;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
 }
 .page {
-    height: 100vh;
+    overflow: hidden;
+    height: 100%;
     position: relative;
     width: 100%;
 }
@@ -64,10 +64,23 @@ body {
     padding: 0;
     width: 450px;
 }
-.navbar__content ul li a {
+.toggle__menu {
+    display: none;
+}
+.navbar__content a {
     color: var(--primary-red);
     font-weight: 700;
     text-decoration: none;
+}
+.navbar__content a:hover::after {
+    transform: scaleX(1);
+}
+.navbar__content a::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid var(--primary-red);
+    transform: scaleX(0);
+    transition: transform 300ms;
 }
 .main-content {
     display: flex;
@@ -158,10 +171,10 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    transform: translateY(100%);    
+    transform: translateX(100%);    
     background: var(--primary-yellow);
     border-radius: 0 80px 0 0;
-
+    grid-area: footer;
     animation-name: footer;
     animation-duration: 0.5s;
     animation-delay: 2.5s;
@@ -170,10 +183,10 @@ body {
 }
 @keyframes footer {
     0% {
-        transform: translateY(100%);
+        transform: translateX(100%);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateX(0px);
     }
 }
 .footer div img {
